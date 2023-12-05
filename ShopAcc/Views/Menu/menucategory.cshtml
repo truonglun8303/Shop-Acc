@@ -1,0 +1,19 @@
+﻿@model IEnumerable<ShopAcc.Models.EF.ProductCategory>
+<!-- Start Add Menu Slide -->
+<ul class="col-sm-12" style="display:flex; position: relative;">
+    @if (Model != null && Model.Any())
+    {
+
+        foreach (var item in Model)
+        {         
+            <li data-value=".@item.Alias" class="product_taital" style="font-size:20px;">@item.Title</li>
+        }
+    }
+    else
+    {
+        <h1>Khong co</h1>
+    }
+    <div class="line"></div>
+</ul>
+
+<!-- End Add Menu Slide -->

@@ -1,0 +1,63 @@
+﻿@model  ShopAcc.Models.EF.AccountUser
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="d-md-flex half">
+
+    <div class="bg" style="background-image: url('/Content/images/leesin.png' );width:70%; "></div>
+    <div class="contents">
+
+        <div class="container" style="background-color:#ffff" >
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-12">
+                    <div class="form-block mx-auto" style="background-color: #f6f7fc">
+                        <div class="text-center mb-5">
+                            <h3 class="text-uppercase"> Đăng ký <strong>VGame</strong></h3>
+                        </div>
+                        @using (Html.BeginForm("Register", "AccountUser", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+                            <div class="form-group first">
+                                <label for="username">Username</label>
+                                @Html.TextBoxFor(x => x.Username, new { @class = "form-control", @placeholder = "Tên người dùng", @id = "username" })
+                                @Html.ValidationMessageFor(x => x.Username, null, new { @class = "text-danger" })
+                                @ViewBag.error
+                            </div>
+                            <div class="form-group first">
+                                <label for="username">Password</label>
+                                @Html.TextBoxFor(x => x.Password, new { @type = "password", @class = "form-control", @placeholder = "Nhập mật khẩu", @id = "username" })
+                                @Html.ValidationMessageFor(x => x.Password, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group first">
+                                <label for="username">Confirm Password</label>
+                                @Html.TextBoxFor(x => x.ConfirmPassword, new { @type = "password", @class = "form-control", @placeholder = "Nhập lại mật khẩu", @id = "username" })
+                                @Html.ValidationMessageFor(x => x.ConfirmPassword, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group first">
+                                <label for="username">Phone Number</label>
+                                @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", @placeholder = "Số điện thoại", @id = "username" })
+                                @Html.ValidationMessageFor(x => x.Phone, null, new { @class = "text-danger" })
+                            </div>
+                            <button type="submit" value="Đăng ký" class="btn btn-block py-2 btn-primary">Đăng ký</button>
+                        }
+                       
+
+                    <div style="padding-top:20px" class="d-sm-flex mb-5 align-items-center">
+                        <span style="font-size:25px; padding-top:5px;"><i class='bx bx-chevrons-left'></i></span>
+                        @Html.ActionLink("Quay lại trang chủ", "Index", "Home", new { @style = "font-size:20px" })
+                    <span class="ml-auto">
+                        @Html.ActionLink("Đăng nhập", "Login", "AccountUser", new { @style = "font-size:20px", @class = "forgot-pass" })
+                    </span>
+                    </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+

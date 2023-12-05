@@ -1,0 +1,141 @@
+﻿@model IEnumerable<ShopAcc.Models.EF.ShoppingCartItem>
+@using ShopAcc.Common
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<section class="h-100 h-custom" style="background-color: #d2c9ff;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                    <div class="card-body p-0">
+                        <div class="row g-0">
+                            <div class="col-lg-8">
+                                <div class="p-5">
+                                    <div class="d-flex justify-content-between align-items-center mb-5">
+                                        <h1 class="fw-bold mb-0 text-black">VGame Cart</h1>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tr class="text-center">
+                                                    <th>STT</th>
+                                                    <th>Hình ảnh</th>
+                                                    <th>Tên</th>
+                                                    <th>Số lượng</th>
+                                                    <th>Giá</th>
+                                                    <th>Tổng Giá</th>
+                                                </tr>
+                                                <hr class="my-4">
+                                                @if (Model != null && Model.Any())
+                                                {
+                                                    var i = 1;
+                                                    var tongtien = decimal.Zero;
+                                                    foreach (var item in Model)
+                                                    {
+                                                        tongtien += item.ToTalPrice;
+                                                        <tr class="text-center" id="trow_@item.ProductId">
+                                                            <td>@i</td>
+                                                            <td class="col-md-2 col-lg-2 col-xl-2"><img class="img-fluid rounded-3" src="@item.ProdcutImage" /></td>
+                                                            <td>@item.ProductName</td>
+                                                            <td>1</td>
+                                                            <td>@item.Price VNĐ</td>
+                                                            <td>@item.ToTalPrice VNĐ</td>
+                                                            <td>
+                                                                <a id="btnDelete" href="#" class="btn btn-sm btn-danger " data-id="@item.ProductId">Xóa</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th class="text-danger" colspan="6">Tổng tiền : </th>
+                                                            <th class="text-center text-danger">
+                                                                @Common.FormatNumber(tongtien, 0)
+                                                            </th>
+                                                        </tr>
+                                                        i++;
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    <p>Chưa có sản phẩm trong giỏ hàng</p>
+
+                                                }
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                    <div class="pt-5">
+                                        <h6 class="mb-0">
+                                            <a href="/Home" class="text-body">
+                                                <i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop
+                                            </a>
+                                        </h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 bg-grey">
+                                <div class="p-5">
+                                    <h3 class="fw-bold mb-5 mt-2 pt-1">Thanh toán</h3>
+                                    <hr class="my-4">
+
+                                    <div class="d-flex justify-content-between mb-4">
+                                        <h5 class="text-uppercase"></h5>
+                                        <h5></h5>
+                                    </div>
+
+
+                                    <h5 class="text-uppercase mb-3">Give code</h5>
+
+                                    <div class="mb-5">
+                                        <div class="form-outline">
+                                            <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Examplea2">Enter your code</label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-5">
+                                        <form>
+                                            <input checked="checked"  name="pay" type="radio" />
+                                            <img width="60px" height="60px" src="~/Content/images/logo-VNPAY.png" />
+                                            <span>VNPAY</span>
+                                            <hr />
+                                            <input name="pay" type="radio" />
+                                            <img width="60px" height="60px" src="~/Content/images/logo-momo.jpg" />
+                                            <span>Momo Wallet payment</span>
+                                            <hr />
+                                            <input name="pay" type="radio" />
+                                            <box-icon type='solid' name='bank'></box-icon>
+                                            <span>Ngân hàng nội địa</span>
+                                            <hr />
+
+                                            <input name="pay" type="radio" />
+                                            <box-icon name='credit-card-front' type='solid'></box-icon>
+                                            <span>Thẻ cào điện thoại</span>
+                                        </form>
+                                       
+                                    </div>
+                                    <hr class="my-4">
+
+                                    <div class="d-flex justify-content-between mb-5">
+                                        <h5 class="text-uppercase">Total price</h5>
+                                        <h5></h5>
+                                    </div>
+
+                                    <a href="/thanh-toan" class="btn btn-dark btn-block btn-lg"
+                                            data-mdb-ripple-color="dark">
+                                        Register
+                                    </a>
+
+                                </div>
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

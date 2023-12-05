@@ -1,0 +1,70 @@
+﻿<!Doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/Content/icon.css">
+
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/Content/Login.css">
+    <link rel="icon" type="image/x-icon" href="~/Content/Detail/assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/Content/Detail/css/styles.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <title>Login #5</title>
+
+</head>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5" style="background:transparent">
+            <a href="/">
+                <h1 class="navbar-brand" style="cursor:pointer; font-size:40px;">VGame</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                </ul>
+                <form class="d-flex">
+                    <a class="btn btn-outline-dark" type="submit" href="/gio-hang">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span id="checkout_items" class="checkout_items" class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- header section start -->
+    <!-- header section end -->
+    @RenderBody()
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Core theme JS-->
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/Detail/js/scripts.js"></script>
+    <script src="~/Content/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/js/popper.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    <script src="~/Content/Scripts/jsShoppingCart.js"></script>
+    <script src="~/Content/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Content/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

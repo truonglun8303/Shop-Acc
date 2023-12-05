@@ -1,0 +1,89 @@
+﻿@model IEnumerable<ShopAcc.Models.EF.Product>
+
+<section style="background-color: #eee;">
+    <div class="container py-5">
+        <div class="row">
+            @if (Model != null && Model.Any())
+            {
+
+                foreach (var item in Model)
+                {
+                    var strImage = "";
+                    var img = item.ProductImage.FirstOrDefault(x => x.IsDefault);
+                    if (img != null)
+                    {
+                        strImage = img.Image;
+                    }
+                    @*<div class="row active-product">
+                            <div class="col-lg-3 col-sm-6 @item.ProductCategory.Alias">
+                                <div class="product_box">
+                                    <h4 class="bursh_text">@item.Title</h4>
+                                    <p class="lorem_text">@item.Description</p>
+                                    <img src="@strImage" alt="@item.Title" class="image_1">
+                                    <div class="btn_main">
+                                        <div class="buy_bt">
+                                            <ul>
+                                                <li class="active"><a href="/chi-tiet/@(item.Id)">Chi tiết</a></li>
+                                                <li><a style="cursor:pointer" class="btnAddToCart" data-id="@item.Id">Thêm giỏ hàng</a></li>
+
+                                            </ul>
+                                        </div>
+                                        <h3 class="price_text">@item.Price</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+
+                    <div class="col-lg-3 col-sm-6 @item.ProductCategory.Alias">
+                        <div class="card text-black">
+                            <img src="@strImage"
+                                 class="card-img-top" alt="Alias" />
+                            <div class="card-body">
+                                <div class="text-center mt-1">
+                                    <h1 class="card-title">@item.Title</h1>
+                                    <h3 style="font-family:  Quicksand, sans-serif; color: #d0021b; font-weight:600; " class="mb-1 pb-0">@ShopAcc.Common.Common.FormatNumber(item.PriceSale) VNĐ</h3>
+                                    <span style="color: #4b4a4a; font-weight:300; text-decoration: line-through; " class="mb-1 pb-2">@ShopAcc.Common.Common.FormatNumber(item.Price) VNĐ</span>
+
+                                </div>
+                                <div class="text-center">
+                                    <div class="p-1 mx-n2 mb-3" style="background-color: #eff1f2;">
+                                        <h5 class="mb-0">Thông tin tài khoản</h5>
+                                    </div>
+
+                                    <div class="d-flex flex-column mb-4 lead">
+                                        <span class="mb-2">Rank: @item.rank</span>
+                                        <span class="mb-2">Tướng: @item.tuong</span>
+                                        <span class="mb-2">Trang phục: @item.trangphuc</span>
+                                        <span style="color: transparent;">0</span>
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <a href="/chi-tiet/@(item.Id)" class="btn btn-sm btn-danger" >
+                                        Detail
+                                    </a>
+
+                                    <a style="color:white; float:right" class="btn btn-sm btn-success btnAddToCart" data-id="@item.Id">Thêm giỏ hàng</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+               
+            }
+        </div>
+    </div>
+</section>
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+            $(".product_taital").click(function () {
+              
+                $(".col-lg-3 col-sm-6").hide();6
+                $($(this).data("value")).fadeIn();
+            });
+        });
+    </script>
+}

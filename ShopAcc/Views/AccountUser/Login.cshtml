@@ -1,0 +1,66 @@
+﻿@model ShopAcc.Models.EF.AccountUser
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="d-md-flex half">
+    <div class="bg" style="background-image: url('/Content/images/leesin.png' );width:70%; "></div>
+    <div class="contents">
+
+        <div class="container" style="background-color:#ffff">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-12">
+                    <div class="form-block mx-auto" style="background-color: #f6f7fc">
+                        <div class="text-center mb-5">
+                            <h3 class="text-uppercase"> Đăng ký <strong>VGame</strong></h3>
+                        </div>
+                        @using (Html.BeginForm("Login", "AccountUser", FormMethod.Post))
+                        {
+                            <div class="form-group first">
+                                <label for="username">Username</label>
+                                @Html.TextBoxFor(x => x.Username, new { @class = "form-control", @placeholder = "Tên người dùng", @id = "username" })
+                                @Html.ValidationMessageFor(x => x.Username, null, new { @class = "text-danger" })
+                                @ViewBag.error
+                            </div>
+                            <div class="form-group last mb-3">
+                                <label for="password">Password</label>
+                                @Html.TextBoxFor(x => x.Username, new { @class = "form-control", @placeholder = "Tên người dùng", @id = "username" })
+                                @Html.ValidationMessageFor(x => x.Password, null, new { @class = "text-danger" })
+                            </div>
+
+                            <div class="d-sm-flex mb-5 align-items-center">
+                                <label class="">
+                                    <input type="checkbox" checked="checked" />
+                                    <span class="caption">Remember me</span>
+
+                                </label>
+                                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+                            </div>
+
+                            <input type="submit" value="Log In" class="btn btn-block py-2 btn-primary">
+                            <span class="text-center my-3 d-block">or</span>
+
+
+                            <div class="">
+
+                                @Html.ActionLink("Đăng ký", "Register", "AccountUser", new { @class = "btn btn-block py-2 btn-facebook", @style = "background-color: green;" })
+                                <a href="#" class="btn btn-block py-2 btn-facebook" style="display:flex;align-items:center; justify-content:center;">
+                                    <span style="font-size:25px;"><i class='bx bxl-facebook-circle'></i></span>Login with facebook
+                                </a>
+                                <a href="#" class="btn btn-block py-2 btn-google" style="display:flex;align-items:center; justify-content:center;">
+                                    <span style="font-size:25px;"><i class='bx bxl-google'></i></span> Login with Google
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
