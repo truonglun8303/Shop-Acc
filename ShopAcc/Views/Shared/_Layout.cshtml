@@ -14,6 +14,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="stylesheet" href="~/Content/css/StylePlus.css"
     <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="~/Content/css/bootstrap.min.css">
     <!-- style css -->
@@ -56,7 +57,7 @@
                     @Html.ActionLink("Đăng ký", "Register", "Account")
                     Welcom: @ViewBag.username*@
                 </a>
-                @if (!Request.IsAuthenticated)
+                @*@if (!Request.IsAuthenticated)
                     {
                         @Html.ActionLink("Đăng nhập", "Login", "Account")
                         @Html.ActionLink("Đăng ký", "Register", "Account")
@@ -66,7 +67,7 @@
                         <a href="#">
                             Welcom: @User.Identity.Name
                         </a>
-                    }
+                    }*@
                 <form class="form-inline ">
                     <div class="login_text" style="width:250px;">
 

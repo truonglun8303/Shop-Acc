@@ -54,7 +54,7 @@ namespace ShopAcc.Areas.Admin.Controllers
                             model.Image = Images[i];
                             model.ProductImage.Add(new ProductImage
                             {
-                                ProductId = model.Id,
+                               ProductId = model.Id,
                                 Image = Images[i],
                                 IsDefault = true
                             });
@@ -77,8 +77,8 @@ namespace ShopAcc.Areas.Admin.Controllers
                     model.SeoTitle = model.Title;
                 }
                 if (string.IsNullOrEmpty(model.Alias))
-                    //model.Alias = ShopAcc.Models.Common.Filter.FilterChar(model.Title);
-                   
+                    model.Alias = ShopAcc.Models.Common.Filter.FilterChar(model.Title);
+
                 db.Products.Add(model);
                 db.SaveChanges();
                 return RedirectToAction("Index");

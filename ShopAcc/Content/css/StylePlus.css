@@ -1,0 +1,28 @@
+﻿.xem_them {
+    width: 100px;
+    height: 30px;
+    background: rgb(223, 76, 76);
+    border-radius:8px;
+    margin:0 auto;
+    margin-bottom:10px;
+    text-align:center;
+    
+}   
+.xem_them a {
+    color: white;
+}
+.Sum_Game {
+
+    text-align:center;
+    border: 1px solid #000000;
+    border-radius:10px;
+}
+    .Sum_Game img {
+        border-radius: 10px;
+        object-fit: fill;
+        width: 100%;
+        margin: 0 auto;
+    }
+.product_section_2 {
+    margin-bottom: 20px;
+}

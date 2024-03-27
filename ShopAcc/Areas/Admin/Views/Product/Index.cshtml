@@ -2,7 +2,7 @@
 @using PagedList.Mvc;
 @using PagedList;
 @{
-    ViewBag.Title = "Sản phẩm";
+    ViewBag.Title = "Product";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
@@ -12,7 +12,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/admin" class="nav-link">Trang chủ</a>
+            <a href="/admin" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="/admin/product" class="nav-link">@ViewBag.Title</a>
@@ -24,7 +24,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Danh sach tin tuc</h1>
+                <h1>Product List</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -41,11 +41,11 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Danh sach danh muc</h3>
+            <h3 class="card-title">Product List</h3>
 
             <div class="card-tools">
-                <a href="/Admin/Product/add" class="btn btn-primary">Them moi</a>
-                <a href="#" class="btn btn-danger" id="BtnDeleteAll">Xoa</a>
+                <a href="/Admin/Product/add" class="btn btn-primary">Add</a>
+                <a href="#" class="btn btn-danger" id="BtnDeleteAll">Delete</a>
             </div>
         </div>
         <div class="card-body">
@@ -55,13 +55,13 @@
                     {
 
 
-                        <div class="form-group">
+                        <div class="form-group d-flex">
                             @*<input type="text" name="searchText" class="form-control" />*@
                             <div class="custom-file">
                                 @Html.TextBox("SearchText", "", new { @class = "form-control" })
                             </div>
                             <span class="input-group-append">
-                                <button type="submit" class="btn btn-info btn-flat">Tim kiem</button>
+                                <button type="submit" class="btn btn-info btn-flat">Search</button>
                             </span>
                         </div>
 
@@ -75,16 +75,17 @@
                 <thead>
                     <tr>
                         <th><input type="checkbox" id="SelectAll" /></th>
-                        <th>STT</th>
+                        <th class="text-center">STT</th>
                         @*<th>Mã sản phẩm</th>*@
-                        <th>Hình ảnh</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Danh mục</th>
-                        <th>Số lượng</th>
-                        <th>Ngay tao</th>
-                        <th class="text-center">Hien thi</th>
-                        <th>Giá</th>
-                        <th></th>
+                        <th class="text-center">Image</th>
+                        <th class="text-center">Product Name</th>
+                        <th class="text-center">Category</th>
+                        @*<th class="text-center">Quantity</th>*@
+                        <th class="text-center">Created Date</th>
+                        <th class="text-center">Show</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Price Sale</th>
+                        <th class="text-center">Function</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -100,19 +101,20 @@
                             <tr id="trow_@item.Id">
 
                                 <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
-                                <td>@i</td>
+                                <td class="text-center">@i</td>
                                 <td><img src="@item.ProductImage.FirstOrDefault(x => x.IsDefault).Image" width="80px" /></td>
-                                <td>@item.Title</td>
-                                <td>@item.ProductCategory.Title</td>
-                                <td>@item.Quantity</td>
-                                <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
-                                <td class="text-center">
+                                <td class="text-center">@item.Title</td>
+                                <td class="text-center">@item.ProductCategory.Title</td>
+                                @*<td class="text-center">@item.Quantity</td>*@
+                                <td class="text-center">@item.CreatedDate.ToString("dd/MM/yyyy")</td>
+                                <td class="text-center">    
                                     <a href='#' data-id="@item.Id" class="btnHome">@Html.Raw(strCheckHome)</a>
                                 </td>
-                                <td>@item.Price</td>
-                                <td>
-                                    <a href="/admin/Product/edit/@item.Id" class="btn btn-sm btn-primary">Sua</a>
-                                    <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xoa</a>
+                                <td class="text-center">@item.Price</td>
+                                <td class="text-center">@item.PriceSale</td>
+                                <td class="text-center">
+                                    <a href="/admin/Product/edit/@item.Id" class="btn btn-sm btn-primary">correct</a>
+                                    <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Delete</a>
                                 </td>
                             </tr>
                             i++;
@@ -121,7 +123,7 @@
                     else
                     {
                         <tr>
-                            <td colspan="4">Khong co ban ghi nao</td>
+                            <td colspan="4">No Content !!!</td>
                         </tr>
                     }
                 </tbody>

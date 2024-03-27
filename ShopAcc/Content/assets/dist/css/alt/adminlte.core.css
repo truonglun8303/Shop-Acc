@@ -4921,7 +4921,6 @@ input[type="button"].btn-block {
   border-top-left-radius: calc(0.25rem - 0);
   border-top-right-radius: calc(0.25rem - 0);
 }
-
 .card-img,
 .card-img-bottom {
   border-bottom-right-radius: calc(0.25rem - 0);

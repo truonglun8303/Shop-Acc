@@ -3209,9 +3209,12 @@
     <Content Include="Content\css\responsive.css" />
     <Content Include="Content\css\slick.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\StylePlus.css" />
     <Content Include="Content\Detail\assets\favicon.ico" />
     <Content Include="Content\Detail\css\styles.css" />
     <Content Include="Content\Detail\js\scripts.js" />
+    <Content Include="Content\images\44.gif" />
+    <Content Include="Content\images\9.gif" />
     <Content Include="Content\images\about-img.png" />
     <Content Include="Content\images\b1.png" />
     <Content Include="Content\images\b2.png" />
@@ -3242,6 +3245,7 @@
     <Content Include="Content\images\lux.png" />
     <Content Include="Content\images\mail-icon.png" />
     <Content Include="Content\images\map-icon.png" />
+    <Content Include="Content\images\MUA-NICK-PUBG-MOBILE.gif" />
     <Content Include="Content\images\random-pubg.png" />
     <Content Include="Content\images\ruong.png" />
     <Content Include="Content\images\search-icon.png" />
@@ -3250,6 +3254,7 @@
     <Content Include="Content\images\support-d63ae08baf517425864ddc02.png" />
     <Content Include="Content\images\toggle-icon.png" />
     <Content Include="Content\images\user-icon.png" />
+    <Content Include="Content\images\Xa-kho-nick-Lien-Quan.gif" />
     <Content Include="Content\images\ys.png" />
     <Content Include="Content\js\bootstrap.bundle.js" />
     <Content Include="Content\js\bootstrap.bundle.min.js" />

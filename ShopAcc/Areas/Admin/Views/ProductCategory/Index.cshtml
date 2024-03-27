@@ -9,10 +9,10 @@
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/admin" class="nav-link">Trang chủ</a>
+            <a href="/admin" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="/admin/ProductCategory" class="nav-link">Danh mục</a>
+            <a href="/admin/ProductCategory" class="nav-link">Category</a>
         </li>
     </ul>
 }
@@ -21,12 +21,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Danh sach danh muc</h1>
+                <h1>Category List</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">Danh muc</li>
+                    <li class="breadcrumb-item active">Category</li>
                 </ol>
             </div>
         </div>
@@ -38,10 +38,10 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Danh sach danh muc</h3>
+            <h3 class="card-title">Category List</h3>
 
             <div class="card-tools">
-                <a href="/Admin/ProductCategory/add" class="btn btn-primary">Them moi</a>
+                <a href="/Admin/ProductCategory/add" class="btn btn-primary">Add</a>
             </div>
         </div>
         <div class="card-body">
@@ -67,8 +67,8 @@
                                 <td>@item.Description</td>
                                 
                                 <td>
-                                    <a href="/admin/ProductCategory/edit/@item.Id" class="btn btn-sm btn-primary">Sua</a>
-                                    <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xoa</a>
+                                    <a href="/admin/ProductCategory/edit/@item.Id" class="btn btn-sm btn-primary">correct</a>
+                                    <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Delete</a>
                                 </td>
                             </tr>
                             i++;
