@@ -1,0 +1,33 @@
+﻿@model PagedList<ShopAcc.Models.EF.Product>
+@using PagedList.Mvc;
+@using PagedList;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <ul>
+        <li class="col card_game">
+            <div class="products-item">
+                <div class="product-top">
+                    <a href="#" class="product-thump">
+                        <img style="height:150px;" src="~/Content/images/44.gif">
+                    </a>
+                    <a href="#" class="buy-now">ABC</a>
+                </div>
+                <div class="xem_mua">
+                    <div class="xem_them">
+                        <a href="#">Xem thêm</a>
+                    </div>
+                    <div class="mua_ngay">
+                        <a href="#">Mua Ngay</a>
+                    </div>
+                </div>
+
+            </div>
+        </li>
+    </ul>
+
+</div>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

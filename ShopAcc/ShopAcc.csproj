@@ -192,6 +192,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\MoreLOLController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
@@ -3222,6 +3223,7 @@
     <Content Include="Content\images\bag-icon.png" />
     <Content Include="Content\images\banner-bg.png" />
     <Content Include="Content\images\banner-img.png" />
+    <Content Include="Content\images\bgbtn.png" />
     <Content Include="Content\images\call-icon.png" />
     <Content Include="Content\images\client-img.png" />
     <Content Include="Content\images\footer-logo.png" />
@@ -3518,6 +3520,7 @@
     <Content Include="Views\ShoppingCart\CheckOut.cshtml" />
     <Content Include="Views\ShoppingCart\CheckOutSuccess.cshtml" />
     <Content Include="Views\ShoppingCart\VnpayReturn.cshtml" />
+    <Content Include="Views\MoreLOL\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

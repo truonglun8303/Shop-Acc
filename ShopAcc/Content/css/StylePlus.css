@@ -1,28 +1,79 @@
-﻿.xem_them {
-    width: 100px;
-    height: 30px;
-    background: rgb(223, 76, 76);
-    border-radius:8px;
-    margin:0 auto;
-    margin-bottom:10px;
-    text-align:center;
-    
-}   
-.xem_them a {
-    color: white;
+﻿.xem_them, .mua_ngay {
+    display: inline-block;
+    width: 136px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 18px;
+    border: none;
+    outline: 0;
+    background: url(../../Content/images/bgbtn.png);
+    margin: 0 auto;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.xem_mua{
+    margin:10px;
+    display:flex;
+}
+
+.Sum_Game, .card_game {
+    text-align: center;
+    border: 1px solid #000000;
+    border-radius: 10px;
 }
 .Sum_Game {
-
-    text-align:center;
-    border: 1px solid #000000;
-    border-radius:10px;
+    background: #1f2228;
 }
-    .Sum_Game img {
-        border-radius: 10px;
-        object-fit: fill;
-        width: 100%;
-        margin: 0 auto;
-    }
+.Sum_Game h3 {
+    padding-top:10px;
+    font-weight: bold;
+    color: #ffffff;    
+}
+.Sum_Game img {
+    border-radius: 10px;
+    object-fit: fill;
+    width: 100%;
+    margin: 0 auto;
+}
 .product_section_2 {
     margin-bottom: 20px;
+}
+
+.buy-now {
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    background-color: rgba(0,0,0,0.8);
+    color: yellow;
+    font-weight:bold;
+    padding: 10px 0px;
+    position: absolute;
+    bottom: -150px;
+    border-radius:10px;
+    width: 100%;
+    height:150px;
+    transition: 0.25s ease-in-out;
+    opacity: 1;
+}
+.product-top{
+    position: relative;
+    overflow: hidden;
+}
+li.card_game:hover a.buy-now {
+    bottom: 0px;
+}
+.product-thump img {
+    border-radius: 10px;
+    object-fit: fill;
+    width: 100%;
+    margin: 0 auto;
+}
+.card_game {
+    background: #1f2228;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
